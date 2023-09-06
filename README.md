@@ -222,7 +222,7 @@ ELSE.
   ENDIF.
 ENDIF.
 ```
-**Exercício: Calcular a Média de Notas**
+**Questão 5: Calcular a Média de Notas**
 
 Suponha que você tem um conjunto de notas de alunos e deseja calcular a média dessas notas.
 
@@ -266,3 +266,140 @@ Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dad
 
 Espero que esses comentários tornem as resoluções mais compreensíveis. Eles explicam o propósito de cada variável e a lógica por trás de cada etapa do programa.
 
+### Questão 6: Calcular a Soma dos Dígitos de um Número
+
+Crie um programa ABAP que solicite ao usuário um número inteiro positivo e calcule a soma dos dígitos desse número.
+
+```abap
+REPORT calcular_soma_digitos.
+
+DATA: lv_numero TYPE i,
+      lv_numero_original TYPE i,
+      lv_soma_digitos TYPE i VALUE 0,
+      lv_digito TYPE i.
+
+WRITE 'Digite um número inteiro positivo:'.
+READ lv_numero.
+
+lv_numero_original = lv_numero.
+
+IF lv_numero < 0.
+  WRITE 'Por favor, insira um número inteiro positivo.'.
+ELSE.
+  DO WHILE lv_numero > 0.
+    lv_digito = lv_numero MOD 10.
+    lv_soma_digitos = lv_soma_digitos + lv_digito.
+    lv_numero = lv_numero / 10.
+  ENDDO.
+
+  WRITE 'A soma dos dígitos de', lv_numero_original, 'é', lv_soma_digitos.
+ENDIF.
+```
+
+### Questão 7: Verificar se um Número é Primo
+
+Crie um programa ABAP que solicite ao usuário um número inteiro positivo e verifique se esse número é primo ou não.
+
+```abap
+REPORT verificar_numero_primo.
+
+DATA: lv_numero TYPE i,
+      lv_eh_primo TYPE abap_bool VALUE abap_true,
+      lv_divisor TYPE i VALUE 2.
+
+WRITE 'Digite um número inteiro positivo:'.
+READ lv_numero.
+
+IF lv_numero <= 1.
+  WRITE 'Por favor, insira um número inteiro positivo maior que 1.'.
+ELSE.
+  DO WHILE lv_divisor <= lv_numero / 2 AND lv_eh_primo = abap_true.
+    IF lv_numero MOD lv_divisor = 0.
+      lv_eh_primo = abap_false.
+    ENDIF.
+    lv_divisor = lv_divisor + 1.
+  ENDDO.
+
+  IF lv_eh_primo = abap_true.
+    WRITE lv_numero, ' é um número primo.'.
+  ELSE.
+    WRITE lv_numero, ' não é um número primo.'.
+  ENDIF.
+ENDIF.
+```
+
+### Questão 8: Gerar uma Sequência Fibonacci
+
+Crie um programa ABAP que solicite ao usuário um número inteiro positivo e gere a sequência Fibonacci até o número desejado.
+
+```abap
+REPORT gerar_sequencia_fibonacci.
+
+DATA: lv_numero TYPE i,
+      lv_anterior TYPE i VALUE 0,
+      lv_atual TYPE i VALUE 1,
+      lv_proximo TYPE i,
+      lv_contador TYPE i VALUE 1.
+
+WRITE 'Digite um número inteiro positivo para gerar a sequência Fibonacci:'.
+READ lv_numero.
+
+IF lv_numero < 1.
+  WRITE 'Por favor, insira um número inteiro positivo maior ou igual a 1.'.
+ELSE.
+  WRITE 'Sequência Fibonacci até', lv_numero, ':', /,
+        lv_anterior, /,
+        lv_atual.
+
+  DO WHILE lv_contador < lv_numero.
+    lv_proximo = lv_anterior + lv_atual.
+    WRITE lv_proximo.
+    lv_anterior = lv_atual.
+    lv_atual = lv_proximo.
+    lv_contador = lv_contador + 1.
+  ENDDO.
+ENDIF.
+```
+
+### Questão 9: Calcular o Quadrado e a Raiz Quadrada de um Número
+
+Crie um programa ABAP que solicite ao usuário um número e calcule o quadrado e a raiz quadrada desse número.
+
+```abap
+REPORT calcular_quadrado_raiz.
+
+DATA: lv_numero TYPE f,
+      lv_quadrado TYPE f,
+      lv_raiz_quadrada TYPE f.
+
+WRITE 'Digite um número:'.
+READ lv_numero.
+
+lv_quadrado = lv_numero * lv_numero.
+lv_raiz_quadrada = sqrt( lv_numero ).
+
+WRITE 'O quadrado de', lv_numero, 'é', lv_quadrado.
+WRITE 'A raiz quadrada de', lv_numero, 'é', lv_raiz_quadrada.
+```
+
+### Questão 10: Ordenar uma Tabela Interna
+
+Crie um programa ABAP que declare uma tabela interna com números inteiros e ordene-a em ordem crescente.
+
+```abap
+REPORT ordenar_tabela_interna.
+
+DATA: lt_numeros TYPE TABLE OF i,
+      lv_numero TYPE i.
+
+APPEND 10 TO lt_numeros.
+APPEND 5 TO lt_numeros.
+APPEND 25 TO lt_numeros.
+APPEND 2 TO lt_numeros.
+
+SORT lt_numeros ASCENDING.
+
+LOOP AT lt_numeros INTO lv_numero.
+  WRITE lv_numero.
+ENDLOOP.
+```
