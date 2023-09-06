@@ -736,5 +736,162 @@ lv_montante_final = lv_capital * (1 + lv_taxa_juros) ** lv_periodo.
 
 WRITE 'O montante final é:', lv_montante_final.
 ```
+### Questão 21: Converter Horas em Minutos
 
-Agora, cada código possui um comentário no topo que descreve o enunciado da questão, e os comentários explicam a lógica de cada programa. Espero que isso seja útil! Se você tiver mais perguntas ou precisar de mais assistência, fique à vontade para perguntar.
+```abap
+" Questão 21: Converter Horas em Minutos
+" Crie um programa ABAP que solicite ao usuário um número de horas e o converta em minutos.
+
+REPORT converter_horas_para_minutos.
+
+DATA: lv_horas TYPE f,
+      lv_minutos TYPE f.
+
+WRITE 'Digite um número de horas:'.
+READ lv_horas.
+
+lv_minutos = lv_horas * 60.
+
+WRITE 'O número de horas é igual a', lv_minutos, 'minutos.'
+```
+
+### Questão 22: Gerar Sequência de Números Primos
+
+```abap
+" Questão 22: Gerar Sequência de Números Primos
+" Crie um programa ABAP que solicite ao usuário um limite superior e gere uma sequência de números primos até esse limite.
+
+REPORT gerar_sequencia_primos.
+
+DATA: lv_limite TYPE i,
+      lv_numero TYPE i VALUE 2,
+      lv_eh_primo TYPE abap_bool,
+      lv_divisor TYPE i.
+
+WRITE 'Digite um limite superior:'.
+READ lv_limite.
+
+WRITE 'Números primos até', lv_limite, ':', /.
+
+DO WHILE lv_numero <= lv_limite.
+  lv_eh_primo = abap_true.
+  lv_divisor = 2.
+
+  DO WHILE lv_divisor <= lv_numero / 2 AND lv_eh_primo = abap_true.
+    IF lv_numero MOD lv_divisor = 0.
+      lv_eh_primo = abap_false.
+    ENDIF.
+    lv_divisor = lv_divisor + 1.
+  ENDDO.
+
+  IF lv_eh_primo = abap_true.
+    WRITE lv_numero.
+  ENDIF.
+
+  lv_numero = lv_numero + 1.
+ENDDO.
+```
+
+### Questão 23: Contagem de Vogais e Consoantes
+
+```abap
+" Questão 23: Contagem de Vogais e Consoantes
+" Crie um programa ABAP que solicite ao usuário uma frase e conte quantas vogais e consoantes ela possui.
+
+REPORT contar_vogais_consoantes.
+
+DATA: lv_frase TYPE string,
+      lv_vogais TYPE i VALUE 0,
+      lv_consoantes TYPE i VALUE 0,
+      lv_char TYPE c LENGTH 1.
+
+WRITE 'Digite uma frase:'.
+READ lv_frase.
+
+DO lv_char = lv_frase+1(1) WHILE lv_char NE space.
+  TRANSLATE lv_char TO UPPER CASE.
+  CASE lv_char.
+    WHEN 'A' OR 'E' OR 'I' OR 'O' OR 'U'.
+      lv_vogais = lv_vogais + 1.
+    WHEN 'B' TO 'Z'.
+      lv_consoantes = lv_consoantes + 1.
+  ENDCASE.
+ENDDO.
+
+WRITE 'A frase possui', lv_vogais, 'vogais e', lv_consoantes, 'consoantes.'.
+```
+
+### Questão 24: Converter Decimal para Hexadecimal
+
+```abap
+" Questão 24: Converter Decimal para Hexadecimal
+" Crie um programa ABAP que solicite ao usuário um número decimal e o converta para sua representação em hexadecimal.
+
+REPORT converter_decimal_para_hexadecimal.
+
+DATA: lv_decimal TYPE i,
+      lv_hexadecimal TYPE string VALUE '',
+      lv_resto TYPE i.
+
+WRITE 'Digite um número decimal:'.
+READ lv_decimal.
+
+DO WHILE lv_decimal > 0.
+  lv_resto = lv_decimal MOD 16.
+  CASE lv_resto.
+    WHEN 0 TO 9.
+      lv_hexadecimal = lv_resto && lv_hexadecimal.
+    WHEN 10.
+      lv_hexadecimal = 'A' && lv_hexadecimal.
+    WHEN 11.
+      lv_hexadecimal = 'B' && lv_hexadecimal.
+    WHEN 12.
+      lv_hexadecimal = 'C' && lv_hexadecimal.
+    WHEN 13.
+      lv_hexadecimal = 'D' && lv_hexadecimal.
+    WHEN 14.
+      lv_hexadecimal = 'E' && lv_hexadecimal.
+    WHEN OTHERS.
+      lv_hexadecimal = 'F' && lv_hexadecimal.
+  ENDCASE.
+  lv_decimal = lv_decimal DIV 16.
+ENDDO.
+
+WRITE 'O número em hexadecimal é:', lv_hexadecimal.
+```
+
+### Questão 25: Gerar Sequência Fibonacci
+
+```abap
+" Questão 25: Gerar Sequência Fibonacci
+" Crie um programa ABAP que solicite ao usuário um número N e gere os N primeiros números da sequência de Fibonacci.
+
+REPORT gerar_sequencia_fibonacci.
+
+DATA: lv_limite TYPE i,
+      lv_fibonacci1 TYPE i VALUE 0,
+      lv_fibonacci2 TYPE i VALUE 1,
+      lv_contador TYPE i VALUE 2,
+      lv_proximo_fibonacci TYPE i.
+
+WRITE 'Digite um número N para gerar os N primeiros números da sequência de Fibonacci:'.
+READ lv_limite.
+
+IF lv_limite >= 1.
+  WRITE 'Sequência de Fibonacci:', /, lv_fibonacci1, /, lv_fibonacci2.
+
+  DO WHILE lv_contador < lv_limite.
+    lv_proximo_fibonacci = lv_fibonacci1 + lv_fibonacci2.
+    WRITE lv_proximo_fibonacci.
+    
+    lv_fibonacci1 = lv_fibonacci2.
+    lv_fibonacci2 = lv_proximo_fibonacci.
+    
+    lv_contador = lv_contador + 1.
+  ENDDO.
+ELSE.
+  WRITE 'Por favor, insira um número maior ou igual a 1 para gerar a sequência de Fibonacci.'.
+ENDIF.
+```
+
+Agora, com esta nova questão, deve haver uma variedade completa de questões sem repetições. Se você tiver mais perguntas ou precisar de mais assistência, fique à vontade para perguntar.
