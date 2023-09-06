@@ -98,5 +98,174 @@ LOOP AT lt_names INTO lv_name.      " Loop que itera sobre os elementos da tabel
   WRITE: 'Nome:', lv_name.          " Exibe os valores da tabela interna
 ENDLOOP.
 ```
+O ABAP é uma linguagem poderosa usada principalmente no contexto do SAP, e esses são apenas alguns dos conceitos básicos para começar. À medida que você se aprofundar, encontrará muitos recursos avançados para explorar.
 
-Espero que esses comentários tornem os exemplos mais compreensíveis. O ABAP é uma linguagem poderosa usada principalmente no contexto do SAP, e esses são apenas alguns dos conceitos básicos para começar. À medida que você se aprofundar, encontrará muitos recursos avançados para explorar.
+## Exercícios
+
+**Exercício: Calcular a Média de Notas**
+
+Suponha que você tem um conjunto de notas de alunos e deseja calcular a média dessas notas.
+
+```abap
+REPORT calcular_media.
+
+DATA: lt_notas TYPE TABLE OF i,
+      lv_nota TYPE i,
+      lv_soma TYPE i,
+      lv_media TYPE f.
+
+" Adicione algumas notas à tabela interna (pode ser feito interagindo com uma base de dados real)
+APPEND 90 TO lt_notas.
+APPEND 85 TO lt_notas.
+APPEND 78 TO lt_notas.
+APPEND 92 TO lt_notas.
+APPEND 88 TO lt_notas.
+
+" Calcule a soma das notas
+LOOP AT lt_notas INTO lv_nota.
+  lv_soma = lv_soma + lv_nota.
+ENDLOOP.
+
+" Calcule a média
+lv_media = lv_soma / lines( lt_notas ).
+
+WRITE: 'Notas dos alunos:', /, /.
+
+" Exiba as notas e a média
+LOOP AT lt_notas INTO lv_nota.
+  WRITE: lv_nota, /.
+ENDLOOP.
+
+WRITE: /, 'Média das notas:', lv_media.
+
+```
+
+Neste exemplo, primeiro criamos uma tabela interna (`lt_notas`) para armazenar as notas dos alunos. Em seguida, adicionamos algumas notas à tabela interna. O loop calcula a soma das notas e, finalmente, a média é calculada e exibida na tela.
+
+Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dados ou uma fonte de dados para obter as notas dos alunos em vez de adicioná-las manualmente como fizemos neste exemplo simples.
+
+Peço desculpas pela omissão dos comentários no código anterior. Aqui estão as resoluções das questões com comentários explicativos:
+
+**Questão 1: Calcular o Fatorial de um Número**
+Crie um programa ABAP que solicite ao usuário um número inteiro positivo e calcule o fatorial desse número. Em seguida, exiba o resultado.
+
+```abap
+REPORT calcular_fatorial.
+
+DATA: lv_numero TYPE i,            " Declaração da variável para armazenar o número
+      lv_fatorial TYPE i VALUE 1,  " Inicialização do fatorial com 1
+      lv_resultado TYPE i.         " Variável para armazenar o resultado
+
+WRITE 'Digite um número inteiro positivo:'.
+READ lv_numero.
+
+IF lv_numero < 0.
+  WRITE 'Por favor, insira um número inteiro positivo.'.
+ELSE.
+  DO lv_numero TIMES.               " Loop para calcular o fatorial
+    lv_fatorial = lv_fatorial * lv_numero.
+    lv_numero = lv_numero - 1.
+  ENDDO.
+
+  lv_resultado = lv_fatorial.
+  WRITE 'O fatorial é:', lv_resultado.
+ENDIF.
+```
+
+**Questão 2: Encontrar o Maior Valor em uma Tabela Interna**
+Crie um programa ABAP que declare uma tabela interna com números inteiros e encontre o maior valor dentro dela. Exiba o valor máximo encontrado.
+
+```abap
+REPORT encontrar_maior_valor.
+
+DATA: lt_numeros TYPE TABLE OF i,    " Declaração da tabela interna
+      lv_maior_valor TYPE i,        " Variável para armazenar o maior valor
+      lv_numero TYPE i.
+
+APPEND 10 TO lt_numeros.             " Adição de valores à tabela interna
+APPEND 25 TO lt_numeros.
+APPEND 5 TO lt_numeros.
+APPEND 40 TO lt_numeros.
+
+LOOP AT lt_numeros INTO lv_numero.   " Loop para encontrar o maior valor
+  IF lv_numero > lv_maior_valor.
+    lv_maior_valor = lv_numero.
+  ENDIF.
+ENDLOOP.
+
+WRITE 'O maior valor na tabela é:', lv_maior_valor.
+```
+
+**Questão 3: Conversão de Unidades de Temperatura**
+Crie um programa ABAP que permita ao usuário converter temperaturas de graus Celsius para Fahrenheit e vice-versa. Solicite ao usuário que escolha a conversão desejada e forneça as fórmulas de conversão adequadas.
+
+```abap
+REPORT converter_temperatura.
+
+DATA: lv_opcao TYPE c LENGTH 1,       " Variável para a escolha da conversão
+      lv_temperatura TYPE f,          " Variável para a temperatura a ser convertida
+      lv_resultado TYPE f.            " Variável para armazenar o resultado
+
+WRITE 'Escolha a conversão desejada:', /,
+      '1 - Celsius para Fahrenheit', /,
+      '2 - Fahrenheit para Celsius'.
+
+READ lv_opcao.
+
+WRITE 'Digite a temperatura:'.
+READ lv_temperatura.
+
+CASE lv_opcao.                        " Estrutura de controle CASE para a escolha da conversão
+  WHEN '1'.
+    lv_resultado = (lv_temperatura * 9 / 5) + 32.  " Fórmula de conversão Celsius para Fahrenheit
+    WRITE 'A temperatura em Fahrenheit é:', lv_resultado.
+  WHEN '2'.
+    lv_resultado = (lv_temperatura - 32) * 5 / 9.  " Fórmula de conversão Fahrenheit para Celsius
+    WRITE 'A temperatura em Celsius é:', lv_resultado.
+  WHEN OTHERS.
+    WRITE 'Opção inválida.'.
+ENDCASE.
+```
+
+**Questão 4: Validar um CPF**
+Crie um programa ABAP que valide um número de CPF (Cadastro de Pessoa Física) inserido pelo usuário. Verifique se o CPF possui os dígitos verificadores corretos de acordo com a fórmula de validação.
+
+```abap
+REPORT validar_cpf.
+
+DATA: lv_cpf TYPE string,                " Variável para armazenar o CPF inserido
+      lv_cpf_numeros TYPE string,       " Variável para armazenar apenas os números do CPF
+      lv_digito1 TYPE i,                " Variáveis para armazenar os dígitos verificadores
+      lv_digito2 TYPE i,
+      lv_soma1 TYPE i,                 " Variáveis para calcular a soma de dígitos ponderados
+      lv_soma2 TYPE i.
+
+WRITE 'Digite um número de CPF (apenas números):'.
+READ lv_cpf.
+
+IF strlen( lv_cpf ) <> 11 OR lv_cpf CP '0123456789' <> ''.
+  WRITE 'CPF inválido.'.
+ELSE.
+  lv_cpf_numeros = lv_cpf+1(9).         " Extrai os nove primeiros dígitos do CPF
+
+  lv_soma1 = 0.
+  lv_soma2 = 0.
+
+  DO 9 TIMES.                         " Loop para calcular as somas
+    lv_soma1 = lv_soma1 + ( val( lv_cpf_numeros+sy-index(1) ) * (10 - sy-index) ).
+    lv_soma2 = lv_soma2 + ( val( lv_cpf_numeros+sy-index(1) ) * (11 - sy-index) ).
+  ENDDO.
+
+  lv_digito1 = 11 - ( lv_soma1 % 11 ).    " Cálculo do primeiro dígito verificador
+  lv_digito2 = 11 - ( lv_soma2 % 11 ).    " Cálculo do segundo dígito verificador
+
+  IF lv_digito1 = val( lv_cpf+10(1) ) AND lv_digito2 = val( lv_cpf+11(1) ).
+    WRITE 'CPF válido.'.
+  ELSE.
+    WRITE 'CPF inválido.'.
+  ENDIF.
+ENDIF.
+```
+
+Espero que esses comentários tornem as resoluções mais compreensíveis. Eles explicam o propósito de cada variável e a lógica por trás de cada etapa do programa.
+
