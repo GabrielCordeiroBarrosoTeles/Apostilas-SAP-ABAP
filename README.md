@@ -102,50 +102,6 @@ O ABAP é uma linguagem poderosa usada principalmente no contexto do SAP, e esse
 
 ## Exercícios
 
-**Exercício: Calcular a Média de Notas**
-
-Suponha que você tem um conjunto de notas de alunos e deseja calcular a média dessas notas.
-
-```abap
-REPORT calcular_media.
-
-DATA: lt_notas TYPE TABLE OF i,
-      lv_nota TYPE i,
-      lv_soma TYPE i,
-      lv_media TYPE f.
-
-" Adicione algumas notas à tabela interna (pode ser feito interagindo com uma base de dados real)
-APPEND 90 TO lt_notas.
-APPEND 85 TO lt_notas.
-APPEND 78 TO lt_notas.
-APPEND 92 TO lt_notas.
-APPEND 88 TO lt_notas.
-
-" Calcule a soma das notas
-LOOP AT lt_notas INTO lv_nota.
-  lv_soma = lv_soma + lv_nota.
-ENDLOOP.
-
-" Calcule a média
-lv_media = lv_soma / lines( lt_notas ).
-
-WRITE: 'Notas dos alunos:', /, /.
-
-" Exiba as notas e a média
-LOOP AT lt_notas INTO lv_nota.
-  WRITE: lv_nota, /.
-ENDLOOP.
-
-WRITE: /, 'Média das notas:', lv_media.
-
-```
-
-Neste exemplo, primeiro criamos uma tabela interna (`lt_notas`) para armazenar as notas dos alunos. Em seguida, adicionamos algumas notas à tabela interna. O loop calcula a soma das notas e, finalmente, a média é calculada e exibida na tela.
-
-Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dados ou uma fonte de dados para obter as notas dos alunos em vez de adicioná-las manualmente como fizemos neste exemplo simples.
-
-Peço desculpas pela omissão dos comentários no código anterior. Aqui estão as resoluções das questões com comentários explicativos:
-
 **Questão 1: Calcular o Fatorial de um Número**
 Crie um programa ABAP que solicite ao usuário um número inteiro positivo e calcule o fatorial desse número. Em seguida, exiba o resultado.
 
@@ -266,6 +222,47 @@ ELSE.
   ENDIF.
 ENDIF.
 ```
+**Exercício: Calcular a Média de Notas**
+
+Suponha que você tem um conjunto de notas de alunos e deseja calcular a média dessas notas.
+
+```abap
+REPORT calcular_media.
+
+DATA: lt_notas TYPE TABLE OF i,
+      lv_nota TYPE i,
+      lv_soma TYPE i,
+      lv_media TYPE f.
+
+" Adicione algumas notas à tabela interna (pode ser feito interagindo com uma base de dados real)
+APPEND 90 TO lt_notas.
+APPEND 85 TO lt_notas.
+APPEND 78 TO lt_notas.
+APPEND 92 TO lt_notas.
+APPEND 88 TO lt_notas.
+
+" Calcule a soma das notas
+LOOP AT lt_notas INTO lv_nota.
+  lv_soma = lv_soma + lv_nota.
+ENDLOOP.
+
+" Calcule a média
+lv_media = lv_soma / lines( lt_notas ).
+
+WRITE: 'Notas dos alunos:', /, /.
+
+" Exiba as notas e a média
+LOOP AT lt_notas INTO lv_nota.
+  WRITE: lv_nota, /.
+ENDLOOP.
+
+WRITE: /, 'Média das notas:', lv_media.
+
+```
+
+Neste exemplo, primeiro criamos uma tabela interna (`lt_notas`) para armazenar as notas dos alunos. Em seguida, adicionamos algumas notas à tabela interna. O loop calcula a soma das notas e, finalmente, a média é calculada e exibida na tela.
+
+Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dados ou uma fonte de dados para obter as notas dos alunos em vez de adicioná-las manualmente como fizemos neste exemplo simples.
 
 Espero que esses comentários tornem as resoluções mais compreensíveis. Eles explicam o propósito de cada variável e a lógica por trás de cada etapa do programa.
 
