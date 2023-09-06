@@ -1,3 +1,7 @@
+"Questão 3: Conversão de Unidades de Temperatura Crie um programa ABAP que permita ao usuário 
+"converter temperaturas de graus Celsius para Fahrenheit e vice-versa. Solicite ao usuário que 
+"escolha a conversão desejada e forneça as fórmulas de conversão adequadas.
+
 REPORT converter_temperatura.
 
 DATA: lv_opcao TYPE c LENGTH 1,       " Variável para a escolha da conversão
