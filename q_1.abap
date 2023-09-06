@@ -1,3 +1,7 @@
+"Questão 1: Calcular o Fatorial de um Número Crie um programa ABAP que solicite ao 
+"usuário um número inteiro positivo e calcule o fatorial desse número. Em seguida, 
+"exiba o resultado.
+
 REPORT calcular_fatorial.
 
 DATA: lv_numero TYPE i,            " Declaração da variável para armazenar o número
