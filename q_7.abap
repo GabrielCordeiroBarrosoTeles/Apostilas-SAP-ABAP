@@ -1,3 +1,6 @@
+"Questão 7: Verificar se um Número é Primo - Crie um programa ABAP que solicite 
+"ao usuário um número inteiro positivo e verifique se esse número é primo ou não.
+
 REPORT verificar_numero_primo.
 
 DATA: lv_numero TYPE i,
