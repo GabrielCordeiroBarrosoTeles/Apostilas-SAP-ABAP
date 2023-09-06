@@ -1,3 +1,7 @@
+"Questão 2: Encontrar o Maior Valor em uma Tabela Interna Crie um programa 
+"ABAP que declare uma tabela interna com números inteiros e encontre o maior 
+"valor dentro dela. Exiba o valor máximo encontrado.
+
 REPORT encontrar_maior_valor.
 
 DATA: lt_numeros TYPE TABLE OF i,    " Declaração da tabela interna
