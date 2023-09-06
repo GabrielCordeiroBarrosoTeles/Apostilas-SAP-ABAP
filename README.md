@@ -403,3 +403,338 @@ LOOP AT lt_numeros INTO lv_numero.
   WRITE lv_numero.
 ENDLOOP.
 ```
+Com certeza! Aqui estão mais 10 questões com comentários no código e um comentário no topo de cada código descrevendo o enunciado da questão:
+
+### Questão 11: Verificar Palíndromo
+
+```abap
+" Questão 11: Verificar Palíndromo
+" Crie um programa ABAP que solicite ao usuário uma palavra e verifique se ela é um palíndromo (ou seja, pode ser lida da mesma forma da esquerda para a direita e vice-versa).
+
+REPORT verificar_palindromo.
+
+DATA: lv_palavra TYPE string,
+      lv_palindromo TYPE abap_bool VALUE abap_true,
+      lv_inicio TYPE i VALUE 1,
+      lv_fim TYPE i.
+
+WRITE 'Digite uma palavra para verificar se é um palíndromo:'.
+READ lv_palavra.
+
+lv_fim = strlen( lv_palavra ).
+
+DO WHILE lv_inicio < lv_fim AND lv_palindromo = abap_true.
+  IF lv_palavra+lv_inicio(1) <> lv_palavra+lv_fim(1).
+    lv_palindromo = abap_false.
+  ENDIF.
+  lv_inicio = lv_inicio + 1.
+  lv_fim = lv_fim - 1.
+ENDDO.
+
+IF lv_palindromo = abap_true.
+  WRITE 'A palavra é um palíndromo.'.
+ELSE.
+  WRITE 'A palavra não é um palíndromo.'.
+ENDIF.
+```
+
+### Questão 12: Calcular Média Ponderada
+
+```abap
+" Questão 12: Calcular Média Ponderada
+" Crie um programa ABAP que solicite ao usuário as notas e os pesos de três avaliações e calcule a média ponderada.
+
+REPORT calcular_media_ponderada.
+
+DATA: lv_nota1 TYPE f,
+      lv_peso1 TYPE f,
+      lv_nota2 TYPE f,
+      lv_peso2 TYPE f,
+      lv_nota3 TYPE f,
+      lv_peso3 TYPE f,
+      lv_media_ponderada TYPE f.
+
+WRITE 'Digite a nota da primeira avaliação:'.
+READ lv_nota1.
+WRITE 'Digite o peso da primeira avaliação:'.
+READ lv_peso1.
+
+WRITE 'Digite a nota da segunda avaliação:'.
+READ lv_nota2.
+WRITE 'Digite o peso da segunda avaliação:'.
+READ lv_peso2.
+
+WRITE 'Digite a nota da terceira avaliação:'.
+READ lv_nota3.
+WRITE 'Digite o peso da terceira avaliação:'.
+READ lv_peso3.
+
+lv_media_ponderada = (lv_nota1 * lv_peso1 + lv_nota2 * lv_peso2 + lv_nota3 * lv_peso3) / (lv_peso1 + lv_peso2 + lv_peso3).
+
+WRITE 'A média ponderada é:', lv_media_ponderada.
+```
+
+### Questão 13: Contar Números Pares e Ímpares
+
+```abap
+" Questão 13: Contar Números Pares e Ímpares
+" Crie um programa ABAP que solicite ao usuário uma lista de números inteiros separados por vírgulas e conte quantos números são pares e quantos são ímpares.
+
+REPORT contar_pares_impares.
+
+DATA: lv_lista TYPE string,
+      lt_numeros TYPE TABLE OF i,
+      lv_numero TYPE i,
+      lv_contador_pares TYPE i VALUE 0,
+      lv_contador_impares TYPE i VALUE 0,
+      lv_element TYPE string,
+      lv_pos TYPE i,
+      lv_char TYPE c LENGTH 1.
+
+WRITE 'Digite uma lista de números inteiros separados por vírgulas:'.
+READ lv_lista.
+
+lv_lista = lv_lista && ','.
+
+DO.
+  lv_pos = sy-fdpos( lv_lista ).
+
+  IF lv_pos > 0.
+    lv_element = lv_lista+1( lv_pos-1 ).
+    CLEAR lv_numero.
+
+    TRANSLATE lv_element TO UPPER CASE.
+
+    IF lv_element CP '0123456789'.
+      lv_numero = lv_element.
+      IF lv_numero MOD 2 = 0.
+        lv_contador_pares = lv_contador_pares + 1.
+      ELSE.
+        lv_contador_impares = lv_contador_impares + 1.
+      ENDIF.
+    ENDIF.
+
+    lv_lista = lv_lista+lv_pos+1.
+  ELSE.
+    EXIT.
+  ENDIF.
+ENDDO.
+
+WRITE 'Quantidade de números pares:', lv_contador_pares.
+WRITE 'Quantidade de números ímpares:', lv_contador_impares.
+```
+
+### Questão 14: Converter Decimal para Binário
+
+```abap
+" Questão 14: Converter Decimal para Binário
+" Crie um programa ABAP que solicite ao usuário um número decimal e o converta para sua representação em binário.
+
+REPORT converter_decimal_para_binario.
+
+DATA: lv_decimal TYPE i,
+      lv_binario TYPE string VALUE '',
+      lv_resto TYPE i.
+
+WRITE 'Digite um número decimal:'.
+READ lv_decimal.
+
+DO WHILE lv_decimal > 0.
+  lv_resto = lv_decimal MOD 2.
+  lv_binario = lv_resto && lv_binario.
+  lv_decimal = lv_decimal DIV 2.
+ENDDO.
+
+WRITE 'O número em binário é:', lv_binario.
+```
+
+### Questão 15: Verificar Ano Bissexto
+
+```abap
+" Questão 15: Verificar Ano Bissexto
+" Crie um programa ABAP que solicite ao usuário um ano e verifique se ele é bissexto ou não.
+
+REPORT verificar_ano_bissexto.
+
+DATA: lv_ano TYPE i,
+      lv_eh_bissexto TYPE abap_bool VALUE abap_false.
+
+WRITE 'Digite um ano para verificar se é bissexto:'.
+READ lv_ano.
+
+IF lv_ano MOD 4 = 0 AND (lv_ano MOD 100 <> 0 OR lv_ano MOD 400 = 0).
+  lv_eh_bissexto = abap_true.
+ENDIF.
+
+IF lv_eh_bissexto = abap_true.
+  WRITE lv_ano, ' é um ano bissexto.'.
+ELSE.
+  WRITE lv_ano, ' não é um ano bissexto.'.
+ENDIF.
+```
+
+### Questão 16: Calcular Média de Idades
+
+```abap
+" Questão 16: Calcular Média de Idades
+" Crie um programa ABAP que solicite ao usuário as idades de várias pessoas e calcule a média das idades.
+
+REPORT calcular_media_idades.
+
+DATA: lt_idades TYPE TABLE OF i,
+      lv_idade TYPE i,
+      lv_soma_idades TYPE i VALUE 0,
+      lv_media_idades TYPE f.
+
+WRITE 'Digite as idades das pessoas (digite 0 para encerrar):'.
+
+DO.
+  READ lv_idade.
+
+  IF lv_idade = 0.
+    EXIT.
+  ENDIF.
+
+  IF lv_idade >= 0. " Verifica se a idade é um valor válido
+    APPEND lv_idade TO lt_idades.
+    lv_soma_idades
+
+ = lv_soma_idades + lv_idade.
+  ENDIF.
+ENDDO.
+
+IF lines( lt_idades ) > 0.
+  lv_media_idades = lv_soma_idades / lines( lt_idades ).
+  WRITE 'A média das idades é:', lv_media_idades.
+ELSE.
+  WRITE 'Nenhuma idade válida foi inserida.'.
+ENDIF.
+```
+
+### Questão 17: Encontrar Múltiplos
+
+```abap
+" Questão 17: Encontrar Múltiplos
+" Crie um programa ABAP que solicite ao usuário um número e encontre os múltiplos desse número até um limite especificado.
+
+REPORT encontrar_multiplos.
+
+DATA: lv_numero TYPE i,
+      lv_limite TYPE i,
+      lv_multiplo TYPE i VALUE 0.
+
+WRITE 'Digite um número:'.
+READ lv_numero.
+
+WRITE 'Digite um limite:'.
+READ lv_limite.
+
+WRITE 'Múltiplos de', lv_numero, 'até', lv_limite, ':', /.
+
+DO WHILE lv_multiplo + lv_numero <= lv_limite.
+  lv_multiplo = lv_multiplo + lv_numero.
+  WRITE lv_multiplo.
+ENDDO.
+```
+
+### Questão 18: Calcular Desconto de Salário
+
+```abap
+" Questão 18: Calcular Desconto de Salário
+" Crie um programa ABAP que solicite ao usuário o salário de um funcionário e calcule o desconto de 10% sobre o salário.
+
+REPORT calcular_desconto_salario.
+
+DATA: lv_salario TYPE f,
+      lv_desconto TYPE f.
+
+WRITE 'Digite o salário do funcionário:'.
+READ lv_salario.
+
+lv_desconto = lv_salario * 0.1. " Calcula o desconto de 10%
+
+WRITE 'O desconto de 10% sobre o salário é:', lv_desconto.
+```
+
+### Questão 19: Jogo de Adivinhação
+
+```abap
+" Questão 19: Jogo de Adivinhação
+" Crie um programa ABAP que gera um número aleatório entre 1 e 100 e permite ao usuário adivinhar o número.
+" O programa deve informar se o número adivinhado é maior ou menor do que o número gerado.
+
+REPORT jogo_adivinhacao.
+
+DATA: lv_numero_aleatorio TYPE i,
+      lv_tentativa TYPE i,
+      lv_palpite TYPE i.
+
+" Gera um número aleatório entre 1 e 100
+lv_numero_aleatorio = cl_abap_random=>random_int( 1 100 ).
+
+WRITE 'Tente adivinhar o número entre 1 e 100.'.
+
+DO.
+  WRITE 'Digite seu palpite:'.
+  READ lv_palpite.
+
+  lv_tentativa = lv_tentativa + 1.
+
+  IF lv_palpite = lv_numero_aleatorio.
+    WRITE 'Parabéns! Você acertou o número em', lv_tentativa, 'tentativas.'.
+    EXIT.
+  ELSEIF lv_palpite < lv_numero_aleatorio.
+    WRITE 'Tente novamente. O número é maior.'.
+  ELSE.
+    WRITE 'Tente novamente. O número é menor.'.
+  ENDIF.
+ENDDO.
+```
+
+### Questão 20: Contagem de Caracteres
+
+```abap
+" Questão 20: Contagem de Caracteres
+" Crie um programa ABAP que solicite ao usuário uma frase e conte quantos caracteres (incluindo espaços) ela possui.
+
+REPORT contar_caracteres.
+
+DATA: lv_frase TYPE string,
+      lv_contagem TYPE i.
+
+WRITE 'Digite uma frase:'.
+READ lv_frase.
+
+lv_contagem = strlen( lv_frase ).
+
+WRITE 'A frase possui', lv_contagem, 'caracteres (incluindo espaços).'.
+```
+
+### Questão 20: Cálculo de Juros Compostos
+
+```abap
+" Questão 20: Cálculo de Juros Compostos
+" Crie um programa ABAP que solicite ao usuário o capital, a taxa de juros anual e o período (em anos) e calcule o montante final usando juros compostos.
+
+REPORT calcular_juros_compostos.
+
+DATA: lv_capital TYPE f,
+      lv_taxa_juros TYPE f,
+      lv_periodo TYPE i,
+      lv_montante_final TYPE f.
+
+WRITE 'Digite o capital inicial:'.
+READ lv_capital.
+
+WRITE 'Digite a taxa de juros anual (em decimal):'.
+READ lv_taxa_juros.
+
+WRITE 'Digite o período (em anos):'.
+READ lv_periodo.
+
+lv_montante_final = lv_capital * (1 + lv_taxa_juros) ** lv_periodo.
+
+WRITE 'O montante final é:', lv_montante_final.
+```
+
+Agora, cada código possui um comentário no topo que descreve o enunciado da questão, e os comentários explicam a lógica de cada programa. Espero que isso seja útil! Se você tiver mais perguntas ou precisar de mais assistência, fique à vontade para perguntar.
