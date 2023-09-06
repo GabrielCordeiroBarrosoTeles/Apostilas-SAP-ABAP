@@ -1,3 +1,7 @@
+"Questão 10: Ordenar uma Tabela Interna - Crie um 
+"programa ABAP que declare uma tabela interna com 
+"números inteiros e ordene-a em ordem crescente.
+
 REPORT ordenar_tabela_interna.
 
 DATA: lt_numeros TYPE TABLE OF i,
