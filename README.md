@@ -56,7 +56,7 @@ A introdução básica à linguagem de programação ABAP (Advanced Business App
 
 Lembrando que a programação ABAP é extensa e envolve muitos conceitos específicos do SAP. Para aprender mais, é aconselhável seguir tutoriais e cursos específicos de ABAP, além de explorar a documentação oficial do SAP e praticar com exemplos de código.
 
-Claro, vou fornecer os códigos com comentários explicativos:
+## Só alguns exemplos:
 
 1. **Declaração de Variáveis e Saída de Dados:**
 
