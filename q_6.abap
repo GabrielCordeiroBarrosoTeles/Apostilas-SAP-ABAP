@@ -1,3 +1,7 @@
+"Questão 6: Calcular a Soma dos Dígitos de um Número - Crie um programa 
+"ABAP que solicite ao usuário um número inteiro positivo e calcule a soma 
+"dos dígitos desse número.
+
 REPORT calcular_soma_digitos.
 
 DATA: lv_numero TYPE i,
