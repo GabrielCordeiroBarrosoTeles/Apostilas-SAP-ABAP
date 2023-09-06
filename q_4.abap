@@ -1,3 +1,7 @@
+"Questão 4: Validar um CPF Crie um programa ABAP que valide um número de CPF 
+"(Cadastro de Pessoa Física) inserido pelo usuário. Verifique se o CPF possui 
+"os dígitos verificadores corretos de acordo com a fórmula de validação.
+
 REPORT validar_cpf.
 
 DATA: lv_cpf TYPE string,                " Variável para armazenar o CPF inserido
