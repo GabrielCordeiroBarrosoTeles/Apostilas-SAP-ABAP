@@ -1,3 +1,7 @@
+"Questão 8: Gerar uma Sequência Fibonacci - Crie um programa ABAP que 
+"solicite ao usuário um número inteiro positivo e gere a sequência 
+"Fibonacci até o número desejado.
+
 REPORT gerar_sequencia_fibonacci.
 
 DATA: lv_numero TYPE i,
