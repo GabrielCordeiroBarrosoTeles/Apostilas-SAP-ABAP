@@ -1,3 +1,7 @@
+"Questão 9: Calcular o Quadrado e a Raiz Quadrada de um Número - Crie um
+"programa ABAP que solicite ao usuário um número e calcule o quadrado e 
+"a raiz quadrada desse número.
+
 REPORT calcular_quadrado_raiz.
 
 DATA: lv_numero TYPE f,
