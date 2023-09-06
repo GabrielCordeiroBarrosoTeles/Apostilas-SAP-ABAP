@@ -55,3 +55,48 @@ A introdução básica à linguagem de programação ABAP (Advanced Business App
     Os programas ABAP são geralmente executados em transações SAP. Você pode criar suas próprias transações para executar seus programas.
 
 Lembrando que a programação ABAP é extensa e envolve muitos conceitos específicos do SAP. Para aprender mais, é aconselhável seguir tutoriais e cursos específicos de ABAP, além de explorar a documentação oficial do SAP e praticar com exemplos de código.
+
+Claro, vou fornecer os códigos com comentários explicativos:
+
+1. **Declaração de Variáveis e Saída de Dados:**
+
+```abap
+DATA lv_name TYPE string.           " Declaração de uma variável de texto
+lv_name = 'João'.                  " Atribuição de um valor à variável
+WRITE 'Olá, ' && lv_name.          " Exibe uma mensagem na tela
+```
+
+2. **Estrutura de Controle IF:**
+
+```abap
+DATA lv_age TYPE i VALUE 25.       " Declaração de uma variável inteira com valor inicial
+IF lv_age >= 18.                    " Verifica se a idade é maior ou igual a 18
+  WRITE 'Você é maior de idade.'.  " Exibe uma mensagem se a condição for verdadeira
+ELSE.
+  WRITE 'Você é menor de idade.'.  " Exibe uma mensagem se a condição for falsa
+ENDIF.
+```
+
+3. **Loop DO:**
+
+```abap
+DATA lv_counter TYPE i VALUE 1.     " Declaração de uma variável de contagem
+DO 5 TIMES.                         " Loop que executa cinco vezes
+  WRITE: 'Iteração', lv_counter.    " Exibe uma mensagem com o valor da contagem
+  lv_counter = lv_counter + 1.     " Atualiza a variável de contagem
+ENDDO.
+```
+
+4. **Tabela Interna e Loop FOR:**
+
+```abap
+DATA lt_names TYPE TABLE OF string. " Declaração de uma tabela interna de textos
+APPEND 'João' TO lt_names.          " Adiciona um valor à tabela interna
+APPEND 'Maria' TO lt_names.         " Adiciona outro valor à tabela interna
+
+LOOP AT lt_names INTO lv_name.      " Loop que itera sobre os elementos da tabela interna
+  WRITE: 'Nome:', lv_name.          " Exibe os valores da tabela interna
+ENDLOOP.
+```
+
+Espero que esses comentários tornem os exemplos mais compreensíveis. O ABAP é uma linguagem poderosa usada principalmente no contexto do SAP, e esses são apenas alguns dos conceitos básicos para começar. À medida que você se aprofundar, encontrará muitos recursos avançados para explorar.
