@@ -1,3 +1,6 @@
+"Questão 5: Calcular a Média de Notas - Suponha que você tem um conjunto 
+"de notas de alunos e deseja calcular a média dessas notas.
+
 REPORT calcular_media.
 
 DATA: lt_notas TYPE TABLE OF i,
