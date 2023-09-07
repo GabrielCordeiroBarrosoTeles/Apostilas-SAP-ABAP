@@ -266,7 +266,7 @@ Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dad
 
 Espero que esses comentários tornem as resoluções mais compreensíveis. Eles explicam o propósito de cada variável e a lógica por trás de cada etapa do programa.
 
-** [Questão 6:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_6.abap) Calcular a Soma dos Dígitos de um Número
+** [Questão 6:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_6.abap) Calcular a Soma dos Dígitos de um Número**
 
 Crie um programa ABAP que solicite ao usuário um número inteiro positivo e calcule a soma dos dígitos desse número.
 
@@ -296,9 +296,7 @@ ELSE.
 ENDIF.
 ```
 
-**[Questão 7:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_7.abap) Verificar se um Número é Primo
-
-Crie um programa ABAP que solicite ao usuário um número inteiro positivo e verifique se esse número é primo ou não.
+**[Questão 7:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_7.abap) Verificar se um Número é Primo.Crie um programa ABAP que solicite ao usuário um número inteiro positivo e verifique se esse número é primo ou não.**
 
 ```abap
 REPORT verificar_numero_primo.
@@ -328,7 +326,7 @@ ELSE.
 ENDIF.
 ```
 
-### Questão 8: Gerar uma Sequência Fibonacci
+**[Questão 8:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_8.abap) Gerar uma Sequência Fibonacci**
 
 Crie um programa ABAP que solicite ao usuário um número inteiro positivo e gere a sequência Fibonacci até o número desejado.
 
@@ -361,9 +359,7 @@ ELSE.
 ENDIF.
 ```
 
-**[Questão 9:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_9.abap) Calcular o Quadrado e a Raiz Quadrada de um Número
-
-Crie um programa ABAP que solicite ao usuário um número e calcule o quadrado e a raiz quadrada desse número.
+**[Questão 9:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_9.abap) Calcular o Quadrado e a Raiz Quadrada de um Número.Crie um programa ABAP que solicite ao usuário um número e calcule o quadrado e a raiz quadrada desse número.**
 
 ```abap
 REPORT calcular_quadrado_raiz.
@@ -382,9 +378,7 @@ WRITE 'O quadrado de', lv_numero, 'é', lv_quadrado.
 WRITE 'A raiz quadrada de', lv_numero, 'é', lv_raiz_quadrada.
 ```
 
-**[Questão 10:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_10.abap) Ordenar uma Tabela Interna
-
-Crie um programa ABAP que declare uma tabela interna com números inteiros e ordene-a em ordem crescente.
+**[Questão 10:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_10.abap) Ordenar uma Tabela Interna.Crie um programa ABAP que declare uma tabela interna com números inteiros e ordene-a em ordem crescente.**
 
 ```abap
 REPORT ordenar_tabela_interna.
@@ -405,7 +399,7 @@ ENDLOOP.
 ```
 Com certeza! Aqui estão mais 10 questões com comentários no código e um comentário no topo de cada código descrevendo o enunciado da questão:
 
-**[Questão 11:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_11.abap) Verificar Palíndromo
+**[Questão 11:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_11.abap) Verificar Palíndromo**
 
 ```abap
 " Questão 11: Verificar Palíndromo
@@ -438,7 +432,7 @@ ELSE.
 ENDIF.
 ```
 
-**[Questão 12:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_12.abap) Calcular Média Ponderada
+**[Questão 12:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_12.abap) Calcular Média Ponderada**
 
 ```abap
 " Questão 12: Calcular Média Ponderada
@@ -474,7 +468,7 @@ lv_media_ponderada = (lv_nota1 * lv_peso1 + lv_nota2 * lv_peso2 + lv_nota3 * lv_
 WRITE 'A média ponderada é:', lv_media_ponderada.
 ```
 
-**[Questão 13:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_13.abap) Contar Números Pares e Ímpares
+**[Questão 13:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_13.abap) Contar Números Pares e Ímpares**
 
 ```abap
 " Questão 13: Contar Números Pares e Ímpares
@@ -524,7 +518,7 @@ WRITE 'Quantidade de números pares:', lv_contador_pares.
 WRITE 'Quantidade de números ímpares:', lv_contador_impares.
 ```
 
-**[Questão 14:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_14.abap) Converter Decimal para Binário
+**[Questão 14:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_14.abap) Converter Decimal para Binário**
 
 ```abap
 " Questão 14: Converter Decimal para Binário
@@ -548,7 +542,7 @@ ENDDO.
 WRITE 'O número em binário é:', lv_binario.
 ```
 
-**[Questão 15:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_15.abap) Verificar Ano Bissexto
+**[Questão 15:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_15.abap) Verificar Ano Bissexto**
 
 ```abap
 " Questão 15: Verificar Ano Bissexto
@@ -573,7 +567,7 @@ ELSE.
 ENDIF.
 ```
 
-**[Questão 16:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_16.abap) Calcular Média de Idades
+**[Questão 16:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_16.abap) Calcular Média de Idades**
 
 ```abap
 " Questão 16: Calcular Média de Idades
@@ -611,7 +605,7 @@ ELSE.
 ENDIF.
 ```
 
-**[Questão 17:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_17.abap) Encontrar Múltiplos
+**[Questão 17:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_17.abap) Encontrar Múltiplos**
 
 ```abap
 " Questão 17: Encontrar Múltiplos
@@ -637,7 +631,7 @@ DO WHILE lv_multiplo + lv_numero <= lv_limite.
 ENDDO.
 ```
 
-**[Questão 18:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_18.abap) Calcular Desconto de Salário
+**[Questão 18:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_18.abap) Calcular Desconto de Salário**
 
 ```abap
 " Questão 18: Calcular Desconto de Salário
@@ -656,7 +650,7 @@ lv_desconto = lv_salario * 0.1. " Calcula o desconto de 10%
 WRITE 'O desconto de 10% sobre o salário é:', lv_desconto.
 ```
 
-**[Questão 19:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_19.abap) Jogo de Adivinhação
+**[Questão 19:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_19.abap) Jogo de Adivinhação**
 
 ```abap
 " Questão 19: Jogo de Adivinhação
@@ -691,7 +685,7 @@ DO.
 ENDDO.
 ```
 
-**[Questão 20:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_20.abap) Contagem de Caracteres
+**[Questão 20:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_20.abap) Contagem de Caracteres**
 
 ```abap
 " Questão 20: Contagem de Caracteres
@@ -710,7 +704,7 @@ lv_contagem = strlen( lv_frase ).
 WRITE 'A frase possui', lv_contagem, 'caracteres (incluindo espaços).'.
 ```
 
-**[Questão 21:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_21.abap) Cálculo de Juros Compostos
+**[Questão 21:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_21.abap) Cálculo de Juros Compostos**
 
 ```abap
 " Questão 21: Cálculo de Juros Compostos
@@ -736,7 +730,7 @@ lv_montante_final = lv_capital * (1 + lv_taxa_juros) ** lv_periodo.
 
 WRITE 'O montante final é:', lv_montante_final.
 ```
-**[Questão 22:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_22.abap)  Converter Horas em Minutos
+**[Questão 22:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_22.abap)  Converter Horas em Minutos**
 
 ```abap
 " Questão 22: Converter Horas em Minutos
@@ -755,7 +749,7 @@ lv_minutos = lv_horas * 60.
 WRITE 'O número de horas é igual a', lv_minutos, 'minutos.'
 ```
 
-**[Questão 23:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_23.abap) Gerar Sequência de Números Primos
+**[Questão 23:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_23.abap) Gerar Sequência de Números Primos**
 
 ```abap
 " Questão 23: Gerar Sequência de Números Primos
@@ -792,7 +786,7 @@ DO WHILE lv_numero <= lv_limite.
 ENDDO.
 ```
 
-**[Questão 24:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_24.abap) Contagem de Vogais e Consoantes
+**[Questão 24:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_24.abap) Contagem de Vogais e Consoantes**
 
 ```abap
 " Questão 24: Contagem de Vogais e Consoantes
@@ -821,7 +815,7 @@ ENDDO.
 WRITE 'A frase possui', lv_vogais, 'vogais e', lv_consoantes, 'consoantes.'.
 ```
 
-**[Questão 25:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_25.abap) Converter Decimal para Hexadecimal
+**[Questão 25:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_25.abap) Converter Decimal para Hexadecimal**
 
 ```abap
 " Questão 25: Converter Decimal para Hexadecimal
@@ -860,7 +854,7 @@ ENDDO.
 WRITE 'O número em hexadecimal é:', lv_hexadecimal.
 ```
 
-**[Questão 26:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_26.abap) Gerar Sequência Fibonacci
+**[Questão 26:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_26.abap) Gerar Sequência Fibonacci**
 
 ```abap
 " Questão 26: Gerar Sequência Fibonacci
