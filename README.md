@@ -266,7 +266,7 @@ Lembre-se de que, em um ambiente SAP real, você interagiria com um banco de dad
 
 Espero que esses comentários tornem as resoluções mais compreensíveis. Eles explicam o propósito de cada variável e a lógica por trás de cada etapa do programa.
 
-** [Questão 6:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_6.abap)Calcular a Soma dos Dígitos de um Número **
+**[Questão 6:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_6.abap)Calcular a Soma dos Dígitos de um Número**
 
 Crie um programa ABAP que solicite ao usuário um número inteiro positivo e calcule a soma dos dígitos desse número.
 
