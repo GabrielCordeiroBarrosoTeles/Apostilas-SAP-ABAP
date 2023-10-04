@@ -100,6 +100,54 @@ ENDLOOP.
 ```
 O ABAP é uma linguagem poderosa usada principalmente no contexto do SAP, e esses são apenas alguns dos conceitos básicos para começar. À medida que você se aprofundar, encontrará muitos recursos avançados para explorar.
 
+A partir da minha última atualização de conhecimento em janeiro de 2022, não tenho informações específicas sobre notas da SAP para o ABAP 751 lançadas após essa data. No entanto, posso lhe fornecer informações gerais sobre o comando `WRITE` em ABAP e algumas formatações comuns que podem ser aplicadas a ele.
+
+O comando `WRITE` é usado para exibir saídas formatadas na janela de resultados do SAP GUI ou para criar saídas de texto em um programa ABAP. Você pode usar várias opções para formatar o texto gerado pelo `WRITE`. Algumas das opções de formatação comuns incluem:
+
+1. **JUSTIFY**: Você pode alinhar o texto à esquerda, à direita ou centralizado usando a opção `JUSTIFY`. Por exemplo:
+   
+   ```abap
+   WRITE: / 'Texto alinhado à esquerda'.
+   WRITE: / 'Texto alinhado à direita' RIGHT-JUSTIFIED.
+   WRITE: / 'Texto centralizado' CENTERED.
+   ```
+
+2. **COLOR**: Você pode alterar a cor do texto usando a opção `COLOR`. Por exemplo:
+
+   ```abap
+   WRITE: / 'Este é um texto vermelho' COLOR COL_NEGATIVE.
+   WRITE: / 'Este é um texto verde' COLOR COL_POSITIVE.
+   ```
+
+3. **INTENSIFIED**: Esta opção pode ser usada para definir a intensidade do texto (normal ou intensificado). Por exemplo:
+
+   ```abap
+   WRITE: / 'Texto normal'.
+   WRITE: / 'Texto intensificado' INTENSIFIED ON.
+   ```
+
+4. **AT LINE-SELECTION**: Esta opção permite adicionar uma ação que será executada quando o usuário clicar na linha exibida. Isso é comumente usado em listas de seleção interativas. Por exemplo:
+
+   ```abap
+   WRITE: / 'Clique aqui' AT LINE-SELECTION.
+   ```
+
+5. **UNDER**: Você pode adicionar linhas sob o texto usando a opção `UNDER`. Isso é útil para separar visualmente diferentes partes da saída. Por exemplo:
+
+   ```abap
+   WRITE: 'Título' UNDER '- - - - - - - - - - - - - - - - - - - - - - - - - -'.
+   ```
+
+6. **ULINE / ULINE RESERVE**: Você pode adicionar linhas horizontais usando `ULINE`. O `ULINE RESERVE` pode ser usado para reservar espaço para uma linha posterior. Por exemplo:
+
+   ```abap
+   WRITE: 'Texto acima da linha'.
+   ULINE.
+   WRITE: 'Texto abaixo da linha'.
+   ```
+
+Note que as opções exatas e o comportamento do comando `WRITE` podem variar entre diferentes versões do ABAP e das notas de atualização da SAP. Certifique-se de verificar a documentação relevante e as notas de atualização específicas para a versão do ABAP que você está usando para obter informações mais detalhadas e atualizadas.
+
 ## Exercícios
 
 **[Questão 1:](https://github.com/GabrielCordeiroBarrosoTeles/Apostilas-SAP-ABAP/blob/main/q_1.abap) Calcular o Fatorial de um Número**
